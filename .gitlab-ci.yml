@@ -1,0 +1,23 @@
+stages:
+  - build
+before_script:
+  - cat /etc/os-release
+
+building job:
+  stage: build
+  script:
+    - pwd
+    - cd ../io && opam install .
+    - cd ../system && opam install .
+    - cd ../coq-json && opam install .
+    - cd ../solidity-coq-translator && dune clean && dune b
+
+
+# building job:
+#   stage: deploy
+#   script:
+#     - ssh -o "StrictHostKeyChecking no" ubuntu@ursus-tools.dev "rm -rf sct/*"
+#     - ssh -o "StrictHostKeyChecking no" ubuntu@ursus-tools.dev "ls sct/"
+#     - scp -r ./* ubuntu@ursus-tools.dev:/home/ubuntu/sct
+#     - ssh -o "StrictHostKeyChecking no" ubuntu@ursus-tools.dev "echo $PATH"
+#     - ssh -o "StrictHostKeyChecking no" ubuntu@ursus-tools.dev "PATH=/home/ubuntu/.opam/ocaml.4.11.2/bin:/home/ubuntu/./TON-Solidity-Compiler/build/solc:/home/ubuntu/.opam/coq-8.15.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin && cd sct/ && dune b && cd _build/default/ && ocamlbuild main.native -use-ocamlfind -package io-system"

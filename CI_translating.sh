@@ -1,0 +1,1 @@
+eval 'python3 translate_run.py -i ${0} -s ~/.everdev/solidity/solc && zip -r translated.zip translated'

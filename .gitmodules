@@ -1,0 +1,17 @@
+[submodule "io"]
+   path = io/
+   url = git@github.com:Pruvendo/coq-io.git
+   branch = main
+   ignore = dirty
+
+[submodule "coq-json"]
+   path = coq-json/
+   url = git@github.com:Pruvendo/coq-json.git
+   branch = main
+   ignore = dirty
+
+[submodule "system"]
+   path = system/
+   url = git@github.com:Pruvendo/coq-system.git
+   branch = main
+   ignore = dirty
