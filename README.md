@@ -1,4 +1,4 @@
-# Translator: solidity -> ursus
+# Translator: solidity → ursus
 ## Script for generating Ursus project from Everscale solidity project (using ast)
 
 
