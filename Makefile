@@ -1,11 +1,11 @@
 all: build
 
 install:
-	cd ../   		&& git clone git@vcs.modus-ponens.com:ton/io.git
+	cd ../   		&& git clone git@github.com:Pruvendo/coq-io.git
 	cd ../io 		&& opam install . -y
-	cd ../   		&& git clone git@vcs.modus-ponens.com:ton/system.git
+	cd ../   		&& git clone git@github.com:Pruvendo/coq-system.git
 	cd ../system 	&& opam install . -y
-	cd ../ 			&& git clone git@vcs.modus-ponens.com:ton/coq-json.git
+	cd ../ 			&& git clone git@github.com:Pruvendo/coq-json.git
 	cd ../coq-json 	&& opam install . -y
 
 build:
